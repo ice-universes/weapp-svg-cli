@@ -1,0 +1,17 @@
+Component({
+  properties: {
+    // #names#
+    name: {
+      type: String,
+    },
+    // #type#
+    type: {
+      type: String,
+      value: 'qweather',
+    }
+    size: {
+      type: Number,
+      value: #size#,
+    },
+  },
+});
