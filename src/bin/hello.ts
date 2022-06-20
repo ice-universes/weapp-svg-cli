@@ -1,4 +1,3 @@
-// @ts-ignore
-import chalk from 'chalk';
+const chalk = require('chalk');
 
 console.log(chalk.blue('╰(*°▽°*)╯ Welcome to weapp-svg-cli.'));

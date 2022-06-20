@@ -20,7 +20,7 @@ export default defineConfig({
   input: 'src/bin/hello.ts',
   output: {
     dir: 'dist',
-    format: 'cjs',
+    format: 'es',
     entryFileNames: '[name].js',
     banner: '#!/usr/bin/env node',
   },
