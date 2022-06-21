@@ -1,7 +1,7 @@
 {
   "name": "ice-weapp-svg-cli",
   "version": "0.0.1",
-  "description": "小程序打包SVG",
+  "description": "小程序本地SVG生成自定义组件",
   "main": "index.ts",
   "bin": {
     "ice--help": "./dist/bin/help.js",
