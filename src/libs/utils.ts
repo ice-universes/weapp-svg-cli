@@ -24,7 +24,7 @@ export interface R {
 }
 
 // 读取目录下的全部 svg 文件, path: 绝对路径
-function readAllFiles(path: string): Array<R> {
+function readAllFiles(path: string, prefix = ''): Array<R> {
   const res: Array<R> = [];
 
   if (fs.existsSync(path)) {
@@ -35,12 +35,12 @@ function readAllFiles(path: string): Array<R> {
 
       if (fs.statSync(curPath).isDirectory()) {
         // 当前是文件夹
-        res.push(...readAllFiles(curPath));
+        res.push(...readAllFiles(curPath, `${files[i]}-`));
       } else {
         // 当前是 svg 文件
         if (files[i].match(/.*\.svg/)) {
           res.push({
-            id: files[i].replace('.svg', ''), // 去掉文件后缀
+            id: `${prefix}${files[i].replace('.svg', '')}`, // 去掉文件后缀
             svg: fs.readFileSync(curPath, 'utf8'),
           });
         }
