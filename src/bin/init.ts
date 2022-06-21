@@ -7,7 +7,6 @@ const targetFile = path.resolve('./config.json');
 const json = `{
   "dir": "./assets",
   "save_dir": "./weather-icon",
-  "default_type": "qweather",
   "default_size": 18
 }`;
 
