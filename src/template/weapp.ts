@@ -1,4 +1,5 @@
-Component({
+module.exports = {
+  js: `Component({
   properties: {
     // #names#
     name: {
@@ -12,4 +13,14 @@ Component({
   data: {
     quote: '"',
   }
-});
+});`,
+
+  wxss: `.icon {
+  background-repeat: no-repeat;
+}`,
+
+  json: `{
+  "component": true,
+  "usingComponents": {}
+}`,
+};

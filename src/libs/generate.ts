@@ -29,7 +29,7 @@ module.exports = {
     // 创建文件
     fs.writeFileSync(
       path.join(saveDir, `${fileName}.wxss`),
-      getTemplate('weapp.wxss')
+      getTemplate('wxss')
     );
 
     fs.writeFileSync(
@@ -38,7 +38,7 @@ module.exports = {
     );
 
     // 替换 js 模板中的 #name# 和 #size# 字段
-    let jsFile = getTemplate('weapp.js');
+    let jsFile = getTemplate('js');
     jsFile = replaceSize(jsFile, config.default_size);
     jsFile = replaceNames(jsFile, res.names);
 
@@ -46,7 +46,7 @@ module.exports = {
 
     fs.writeFileSync(
       path.join(saveDir, `${fileName}.json`),
-      getTemplate('weapp.json')
+      getTemplate('json')
     );
 
     console.log(
