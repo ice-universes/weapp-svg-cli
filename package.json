@@ -1,10 +1,12 @@
 {
-  "name": "weapp-svg-cli",
+  "name": "ice-weapp-svg-cli",
   "version": "0.0.1",
   "description": "小程序打包SVG",
   "main": "index.ts",
   "bin": {
-    "ice-hello": "./dist/hello.js"
+    "ice--help": "./dist/bin/help.js",
+    "ice--init": "./dist/bin/init.js",
+    "ice--generate": "./dist/bin/generate.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

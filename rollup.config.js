@@ -15,13 +15,17 @@ import typescript from '@rollup/plugin-typescript';
 // 转换 CommonJS 模块成 ES6
 import commonjs from '@rollup/plugin-commonjs';
 
-export default defineConfig({
-  plugins: [typescript(), resolve(), commonjs(), terser(), cleanup()],
-  input: 'src/bin/hello.ts',
-  output: {
-    dir: 'dist',
-    format: 'es',
-    entryFileNames: '[name].js',
-    banner: '#!/usr/bin/env node',
+const plugins = [typescript(), resolve(), commonjs(), terser(), cleanup()];
+
+export default defineConfig([
+  {
+    plugins: plugins,
+    input: ['src/bin/help.ts', 'src/bin/init.ts'],
+    output: {
+      dir: 'dist/bin',
+      format: 'es',
+      entryFileNames: '[name].js',
+      banner: '#!/usr/bin/env node',
+    },
   },
-});
+]);
