@@ -4,14 +4,12 @@ Component({
     name: {
       type: String,
     },
-    // #type#
-    type: {
-      type: String,
-      value: 'qweather',
-    }
     size: {
       type: Number,
       value: #size#,
     },
   },
+  data: {
+    quote: '"',
+  }
 });
