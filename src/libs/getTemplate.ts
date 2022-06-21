@@ -1,13 +1,8 @@
-const fs = require('fs');
-const path = require('path');
+const file = require('../template/weapp');
 
 module.exports = {
   // 读取模板文件内容
-  getTemplate(fileName: string) {
-    return fs
-      .readFileSync(path.join(__dirname, `../template/${fileName}.template`))
-      .toString();
+  getTemplate(type: string) {
+    return file[type];
   },
 };
-
-export {};
