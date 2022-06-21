@@ -13,7 +13,10 @@ function getSvg(svg: string): string | void {
 
     const s = content.replace(/\"/g, "'").replace(/\t/g, '');
 
-    return `<svg viewBox='${viewBox}' xmlns='http://www.w3.org/2000/svg' width='{{size}}px' height='{{size}}px'>${s}</svg>`;
+    return `<svg viewBox='${viewBox}' xmlns='http://www.w3.org/2000/svg'>${s}</svg>`
+      .replace(/</g, '%3C')
+      .replace(/>/g, '%3E')
+      .replace(/#/g, '%23');
   }
 
   console.error(chalk.red('Invalid SVG.'));
@@ -30,7 +33,7 @@ function getSvgs(path: string) {
 
     if (content) {
       dom.push(
-        `<!--${svgs[i].id}-->\n<view wx:if="{{name === ${svgs[i].id}}}" style="background: url(data:image/svg+xml;utf8,${content})" class="icon"></view>`
+        `<!--${svgs[i].id}-->\n<view wx:if="{{name === '${svgs[i].id}'}}" style="width:{{size}}px;height:{{size}}px;background:url({{quote}}data:image/svg+xml;utf8,${content}{{quote}})" class="icon"></view>`
       );
 
       names.push(svgs[i].id);
