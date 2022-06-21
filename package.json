@@ -21,6 +21,9 @@
     "svg",
     "weapp"
   ],
+  "files": [
+    "dist"
+  ],
   "author": "ARCTURUS",
   "license": "MIT",
   "devDependencies": {
