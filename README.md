@@ -12,7 +12,7 @@
 ## 使用
 
 ```bash
-pnpm i ice-weapp-svg-cli -D
+pnpm i ice-weapp-svg-cli -g
 ```
 
 ### 生成配置文件
